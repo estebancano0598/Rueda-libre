@@ -1,0 +1,14 @@
+URL: http://127.0.0.1:5500/Rueda_Libre/index1.html
+Protocolo: http
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: /Rueda_Libre/index1.html
+Método de la petición: GET
+Código de estado (Status): 304
+
+Codigo de estado punto 5: 404 y significa que la ruta no pertence a las carpetas del proyecto.
+
+función del html: es el encargado de crear la estructura general de los textos, enlaces y demás herramientas que ayudan a visualizar el contenido de la pagina. Ejemplo: agregar el titulo dentro de la etiqueta <title>.
+función del CSS: es el encargado de brindar estilo a la pagina, colores de fondo, colores de los textos y adecuaciones esteticas de los elementos en la pagina. Ejemplo: acambiar el color del fondo del titulo para enfatizar la importancia de el encabezado de la pagina.
+función de Java: es el encargado de crear las funciones con las que podra interactuar el usuario. Ejemplo: crear una tarjeta intectiva para cuando el cursor pase sobre ella, poder explicar detalles sobre los servicios prestados.
+
