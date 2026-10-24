@@ -12,3 +12,21 @@ función del html: es el encargado de crear la estructura general de los textos,
 función del CSS: es el encargado de brindar estilo a la pagina, colores de fondo, colores de los textos y adecuaciones esteticas de los elementos en la pagina. Ejemplo: acambiar el color del fondo del titulo para enfatizar la importancia de el encabezado de la pagina.
 función de Java: es el encargado de crear las funciones con las que podra interactuar el usuario. Ejemplo: crear una tarjeta intectiva para cuando el cursor pase sobre ella, poder explicar detalles sobre los servicios prestados.
 
+Esquema de regiones y estructuras semánticas:
+
+(<header>)
+- Titulo /logo del sitio.
+
+(<Nav>)
+- Menú de navegación principal (<ul>, <li>, <a>)
+------------------------------------------------
+(<main>)
+
+    <section>
+    - Contenido principal / presentación
+
+    <article>
+    -Bloques con contenido independiente
+ ------------------------------------------------
+(<footer>)
+- Nombre del negocio, correo y copyright
