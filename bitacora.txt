@@ -159,8 +159,31 @@ Estado final: Proyecto v1.0 publicado exitosamente y verificado sin errores en G
 
 ------------------------------------------------------------------------
 
-Semana # 2 Flexbox, Grid y diseño responsive.
 
+--------------------------------------------
+--------------------------------------------
+Semana # 2 Flexbox, Grid y diseño responsive.
+--------------------------------------------
+--------------------------------------------
 con el encabezado ocurrío que la distribucción cambio por completo, el h1 paso de estar en el centro a estar al lado izquierdo del encabezado y los enlaces al lado derecho del encabezado, tambien gracias al display: flex se adapta perfectamente a las pantallas más reduccidas como la de los celulares.
 en el footer sucede lo mismo que con el encabezado, se adapta al tamaño de las pantallas más reducidas.
 
+---------------------------------------------------------------------------
+
+
+- Reestructuración de tarjetas (Flexbox en columna): Se configuró el flujo interno para que el orden visual sea Título ➔ Descripción ➔ Precio ➔ Botón ➔ Imagen al final.
+- Implementación de CSS Grid: Se creó la clase `.flota-grid` con `repeat(auto-fit, minmax(280px, 1fr))` para lograr un diseño adaptable y responsivo sin media queries.
+- Normalización de imágenes: Se añadió el contenedor `.imagen-container` junto con `object-fit: contain` para estandarizar las cajas de visualización sin deformar los diferentes tamaños originales de las bicicletas.
+- Adición de modelo: Se incorporó la séptima bicicleta de la flota ("Tándem") al archivo HTML.
+- Estandarización de botones: Se aplicó el estilo visual unificado (tono naranja, bordes redondeados y ancho completo) a todos los enlaces de reserva de la flota.
+- Resolución de conflictos Git/VS Code: Sincronización de entornos locales y remotos mediante control de versiones.
+
+- Validación de responsividad (Media Queries / Grid Autoadaptable):
+  * A 1280 px: Se visualizan 3 columnas de tarjetas en la sección de la flota.
+  * A 900 px: La cuadrícula se reorganiza automáticamente a 2 columnas.
+  * A 500 px: Las tarjetas se apilan en formato vertical mostrando 1 sola columna.
+
+
+  ----------------------------------------------------------------------------
+
+  

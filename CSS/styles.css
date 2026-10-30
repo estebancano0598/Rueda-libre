@@ -31,8 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
 /* 2. ESTRUCTURA BASE Y LAYOUT */
 header {
     background-color: var(--azul-noche);
@@ -59,40 +57,6 @@ main img {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: var(--espacio-md) 0;
-}
-
-/* Contenedor principal del footer */
-footer {
-  display: flex;
-  flex-direction: column; /* Apila el banner arriba y el contenido abajo */
-  gap: 2rem;
-  padding: 2rem;
-  background-color: var(--color-secundario, #14213d); /* Ajusta a tu variable de color */
-  color: #ffffff;
-}
-
-/* Estilo del Banner */
-.footer-banner {
-  background-color: var(--color-principal, #e63946); /* Mismo color distintivo de tu marca */
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.footer-banner p {
-  margin: 0;
-}
-
-/* Distribución en 3 bloques para pantallas anchas */
-.footer-contenido {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
 }
 
 
@@ -302,18 +266,65 @@ header {
 header nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.5 rem;
     list-style: none;
     margin: 0;
     padding: 0; 
 }
 
-footer {
-   display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
-   padding: 2rem;
-   flex-wrap: wrap;
-   gap: 2rem; 
+/* Grip sin media queries */
+
+.flota-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+
+.tarjeta-modelo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+
+/*caja uniforme para todas las imágenes de la flota */
+.tarjeta-modelo .imagen-container {
+  width: 100%;
+  height: 180px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+
+.tarjeta-modelo .imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+
+.tarjeta-modelo .btn-reservar {
+  display: block;
+  width: 100%;
+  background-color: #f6993f; /* Tono naranja característico del botón */
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 6px; /* Bordes redondeados suaves */
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor por encima */
+.tarjeta-modelo .btn-reservar:hover {
+  background-color: #e08730;
 }
 
