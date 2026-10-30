@@ -1,0 +1,166 @@
+URL: http://127.0.0.1:5500/Rueda_Libre/index1.html
+Protocolo: http
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: /Rueda_Libre/index1.html
+Método de la petición: GET
+Código de estado (Status): 304
+
+
+----------------------------------------------
+
+
+Codigo de estado punto 5: 404 y significa que la ruta no pertence a las carpetas del proyecto.
+
+
+
+-----------------------------------------------
+
+
+función del html: es el encargado de crear la estructura general de los textos, enlaces y demás herramientas que ayudan a visualizar el contenido de la pagina. Ejemplo: agregar el titulo dentro de la etiqueta <title>.
+función del CSS: es el encargado de brindar estilo a la pagina, colores de fondo, colores de los textos y adecuaciones esteticas de los elementos en la pagina. Ejemplo: acambiar el color del fondo del titulo para enfatizar la importancia de el encabezado de la pagina.
+función de Java: es el encargado de crear las funciones con las que podra interactuar el usuario. Ejemplo: crear una tarjeta intectiva para cuando el cursor pase sobre ella, poder explicar detalles sobre los servicios prestados.
+
+
+------------------------------------------------
+
+
+Esquema de regiones y estructuras semánticas:
+
+(<header>)
+- Titulo /logo del sitio.
+
+(<Nav>)
+- Menú de navegación principal (<ul>, <li>, <a>)
+.................................................
+(<main>)
+
+    <section>
+    - Contenido principal / presentación
+
+    <article>
+    -Bloques con contenido independiente
+ .................................................
+(<footer>)
+- Nombre del negocio, correo y copyright
+
+
+---------------------------------------------------
+
+Justificación de tipos de datos:
+
+<input type="text"> = permite escribir texto libre, eso lo convierte en el perfecto para escribir el nombre del usuario.
+<input type="email"> = este tipo de dato, valida automaticamente que el texto introduccido tenga un formato valido con el @.
+<input type="tel"> = este tipo de dato esta optimizado para números de telefono.
+
+-----------------------------------------------------
+
+Tabla de pruebas de validación -formulario de reservas:
+ 
+1. Campo: Nombre completo. Datos de prueba: re. Resultado esperado:error, cantidad minima permitida no alcanzada. Resultado obtenido: Prolonga este texto a 3 caracteres o más (actualmente tiene 2 caracteres).
+2. Campo: Numero de documento. Datos de prueba: 544. Resultado esperado:error, numero no valido. Resultado obtenido: Hazlo coincidir con el formato solicitado.
+3. Campo: Correo electronico. Datos de prueba: esteban.gmail.com. Resultado esperado:error, formato no valido. Resultado obtenido: Incluye "@" en la dirección de correo electronico.
+4. Campo: Celular.  Datos de prueba: hola Resultado esperado: error, introduccir un formato valido.  Resultado obtenido: Debe de tener 10 digitos y empezar por el número 3 (Ej: 3001234567).
+5. Campo: Fecha del alquiler. Datos de prueba:11/11/2027 Resultado esperado: error, fecha no valida.  Resultado obtenido: 
+6. Campo: Cantidad de bicicletas. Datos de prueba: 9. Resultado esperado: error, la cantidad maxima es 6.  Resultado obtenido: El valor debe ser menor o igual que 6.
+7. Campo: Politicas de alquiler y seguridad.  Datos de prueba: sin seleccionar el dato. Resultado esperado: error, debes marcar la casilla  Resultado obtenido: marca la casilla si deseas continuar.
+8. Campo: Comentarios o peticiones especiales. Datos de prueba: texto aleatorio de 300 caracteres. Resultado esperado: error, maximo 300 caracteres.  Resultado obtenido: no muestra error pero no deja continuar escribiendo.
+
+---------------------------------------------------------
+
+1. Tenia una imagen decorativa con texto y deje el alt sin texto para que el tab no pare en la imagen.
+2. El recorrido con Tab en el formulario presentaba un salto poco intuitivo entre elementos, verifique la estructura secuencial del código para garantizar que el tab avance de forma lógica de arriba hacia abajo.
+3. Estaba mal el orden de los encabezados saltaba directo de <h1> a <h3> en la sección de bienvenida. Ajuste la jerarquía utilizando un único <h1> para el título principal y las otras etiquetas con <h2> consecutivas para las secciones.
+4. Resevas no tenia el atributo de idioma "es" en lang. Cambie "en" por `lang="es"` en la etiqueta <html>.
+5. no logré encontrar un quinto elemento a cambiar en las tres paginas.
+
+-----------------------------------------------------------
+
+Resultados de contrastes propuestos:
+
+Combinacion evaluada: Texto blanco sobre Verde Ruta.  Relación de contraste (DevTools): ~5.31.  Clasificación WCAG: Apto para texto normal. 
+Combinacion evaluada: Texto blanco sobre Naranja Pedal. Relación de contraste (DevTools): ~2.21.  Clasificación WCAG: No apto para texto normal.
+Combinacion evaluada: Azul Noche sobre Naranja Pedal.  Relación de contraste (DevTools): ~7.2.  Clasificación WCAG: Apto para texto normal.
+Combinacion evaluada: Azul Noche sobre Crema  Relación de contraste (DevTools): ~14.82.  Clasificación WCAG: Apto para texto normal.
+Combinacion evaluada: Gris Asfalto sobre Crema.  Relación de contraste (DevTools): ~5.56.  Clasificación WCAG: Apto para texto normal.
+Combinacion evaluada: Verde Ruta sobre Crema. Relación de contraste (DevTools): ~4.93.   Clasificación WCAG: Apto para texto normal.
+Combinacion evaluada: Naranja Pedal sobre Crema. Relación de contraste (DevTools): ~2.05.   Clasificación WCAG: No apto para texto normal (solo texto grande).
+Combinacion evaluada: Texto blanco sobre Azul Noche. Relación de contraste (DevTools): ~15.97.  Clasificación WCAG: Apto para texto normal.
+
+Mapa de uso de color definido:
+
+Fondo general (background-color): Crema (#FAF6EF) para dar una lectura suave y cómoda.
+Títulos y encabezados (h1, h2, h3): Azul Noche (#14213D) por su excelente contraste sobre el fondo crema.
+Texto secundario y párrafos: Gris Asfalto (#5B6470) sobre fondo crema (cumple perfectamente con 5.56).
+
+Botones y Enlaces:
+Verde Ruta (#1E7A4F) con texto blanco para los botones principales y enlaces (relación de 5.31, totalmente apto).
+Naranja Pedal (#F39A2B) reservado para destacados secundarios o elementos gráficos grandes, ya que sobre fondo claro no cumple para texto pequeño (2.05).
+
+-------------------------------------------------------------
+
+Despliegue y verificación en línea:
+
+- Estado: Desplegado y verificado exitosamente.
+- Plataforma: GitHub Pages.
+- URL Pública: https://estebancano0598.github.io/Rueda-libre/
+- Verificación: Navegación entre secciones, envío de formulario con validaciones HTML5 y assets verificados sin errores en consola.
+
+--------------------------------------------------------------
+
+Comparación de herencia en DevTools:
+
+- Propiedad heredada (font-family): El elemento <p> hereda automáticamente la tipografía Open Sans.
+- Propiedad no heredada (margin): Los márgenes y rellenos no se heredan por defecto.
+
+---------------------------------------------------------------
+
+Registro de estados interactivos y resolución final:
+- Resolución del conflicto de especificidad: Se unificaron los selectores #menu a (para estilos generales) y #menu a.activo (para el estado activo con especificidad 0,2,1), permitiendo que la página actual resalte correctamente en verde sin utilizar !important.
+- Estados interactivos implementados: Se añadió el bloque agrupado #menu a:hover y #menu a:focus utilizando la variable institucional --naranja-pedal y subrayado, asegurando tanto una buena experiencia visual (UX) como accesibilidad por teclado (a11y).
+- Sincronización de rutas: Se ajustaron de forma uniforme las rutas relativas de las hojas de estilo y de los enlaces HTML entre la raíz y la carpeta subalterna (paginas/), logrando que los estilos del menú carguen de manera óptima en todo el sitio.
+
+-----------------------------------------------------------------
+
+Registro del botón de llamada a la acción (CTA):
+- Creación de clase específica: Se implementó la clase .btn-cta para los botones de llamada a la acción ("Reservar ahora"), utilizando variables institucionales (--naranja-pedal y --crema) para el diseño base y la tipografía de títulos.
+- Transiciones y estados interactivos: Se configuraron los estados :hover y :focus utilizando la variable --verde-ruta para ofrecer feedback visual inmediato y garantizar accesibilidad en la navegación por teclado.
+- Uso de selectores limpios: Se aplicó la clase directamente sobre los enlaces de acción, manteniendo una baja especificidad y evitando por completo el uso de !important.
+
+-------------------------------------------------------------------
+
+Medición de modelo de caja:
+- Con box-sizing: border-box activado: El ancho total de la tarjeta .tarjeta-servicio incluye de forma interna los 16px de padding y el borde de 1px, manteniendo el ancho total controlado por su contenedor principal sin desbordarse.
+- Sin box-sizing (comportamiento por defecto content-box): Los rellenos y bordes sumarían espacio extra hacia afuera, ampliando el ancho real de la tarjeta.
+- Verificado y registrado correctamente en Firefox DevTools (Computed).
+
+-------------------------------------------------------------------
+Bitácora del proyecto Rueda libre:
+Semana de Desarrollo Web (MiniRetos 1 al 12)
+
+
+1. RESUMEN DE CONSTRUCCIÓN POR BLOQUES:
+- Retos 1 a 4 (Estructura y Base): Creación del repositorio Git, estructura de carpetas, diseño de la página de inicio, tablas de tarifas y rutas relativas, y la primera versión navegable con menú y pie comunes.
+- Retos 5 a 8 (Semántica y Accesibilidad): Integración de etiquetas semánticas (<header>, <nav>, <main>, <footer>), diseño del formulario con fieldsets, validación nativa de campos (texto, email, teléfono, patrones) y auditoría de accesibilidad con navegación por teclado y contraste de colores.
+- Retos 9 a 10 (Identidad Visual y Estados): Creación de la hoja de estilos externa (styles.css), implementación de variables CSS (:root) con la paleta de colores corporativa y tipografías (Montserrat y Open Sans), además de estados interactivos (:hover, :focus) y clases activas en el menú.
+- Retos 11 a 12 (Modelo de Caja, Posicionamiento y Lanzamiento): Aplicación global de box-sizing: border-box, ordenamiento del layout con anchos máximos y centrado automático, diseño de tarjetas de servicios flexibles, posicionamiento absoluto para la etiqueta "Nuevo", posicionamiento fijo para el botón flotante de WhatsApp, refactorización y organización de styles.css por secciones comentadas, y publicación oficial del sitio en GitHub Pages.
+
+2. DECISIONES TÉCNICAS CLAVE:
+- Uso estricto de unidades relativas (rem, %, vh) combinadas con variables CSS para mantener consistencia y facilitar el mantenimiento.
+- Implementación de box-sizing: border-box global para predecir con exactitud el comportamiento de los anchos y rellenos en DevTools.
+- Estructuración lógica del CSS en 6 secciones comentadas para garantizar código limpio y sin redundancias.
+
+3. LO QUE MEJORARíA / SIGUIENTES PASOS (Versión 2.0):
+- Implementar un menú desplegable (hamburguesa) responsive para dispositivos móviles.
+- Añadir validación interactiva avanzada utilizando JavaScript para mejorar la experiencia de usuario en el formulario de reservas.
+- Integrar animaciones suaves de transición en las tarjetas de servicio y el botón flotante.
+
+Estado final: Proyecto v1.0 publicado exitosamente y verificado sin errores en GitHub Pages.
+
+------------------------------------------------------------------------
+
+Semana # 2 Flexbox, Grid y diseño responsive.
+
+con el encabezado ocurrío que la distribucción cambio por completo, el h1 paso de estar en el centro a estar al lado izquierdo del encabezado y los enlaces al lado derecho del encabezado, tambien gracias al display: flex se adapta perfectamente a las pantallas más reduccidas como la de los celulares.
+en el footer sucede lo mismo que con el encabezado, se adapta al tamaño de las pantallas más reducidas.
+

@@ -1,0 +1,319 @@
+/* 1. VARIABLES Y CONFIGURACIÓN GLOBAL */
+:root {
+    --azul-noche: #14213d;
+    --gris-asfalto: #5b6470;
+    --verde-ruta: #1e7a4f;
+    --naranja-pedal: #f39a2b;
+    --crema: #faf6ef;
+
+    --font-titulo: 'Montserrat', sans-serif;
+    --font-texto: 'Open Sans', sans-serif;
+
+    --espacio-sm: 0.5rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 2rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-texto);
+    color: var(--azul-noche);
+    background-color: var(--crema);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulo);
+}
+
+
+
+
+/* 2. ESTRUCTURA BASE Y LAYOUT */
+header {
+    background-color: var(--azul-noche);
+    color: var(--crema);
+    padding: var(--espacio-lg);
+    text-align: center;
+    min-height: 10vh;
+}
+
+header h1 {
+    color: var(--crema);
+    margin-bottom: var(--espacio-sm);
+}
+
+main {
+    max-width: 65rem;
+    margin: 0 auto;
+    padding: var(--espacio-lg);
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: var(--espacio-md) 0;
+}
+
+/* Contenedor principal del footer */
+footer {
+  display: flex;
+  flex-direction: column; /* Apila el banner arriba y el contenido abajo */
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--color-secundario, #14213d); /* Ajusta a tu variable de color */
+  color: #ffffff;
+}
+
+/* Estilo del Banner */
+.footer-banner {
+  background-color: var(--color-principal, #e63946); /* Mismo color distintivo de tu marca */
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer-banner p {
+  margin: 0;
+}
+
+/* Distribución en 3 bloques para pantallas anchas */
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+/* 3. NAVEGACIÓN Y MENÚ */
+#menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: var(--espacio-md);
+}
+
+#menu li {
+    display: inline-block;
+}
+
+#menu a {
+    color: var(--gris-asfalto);
+    text-decoration: none;
+    font-family: var(--font-titulo);
+}
+
+#menu a.activo {
+    color: var(--verde-ruta);
+    font-weight: 600;
+}
+
+#menu a:hover,
+#menu a:focus {
+    color: var(--naranja-pedal);
+    text-decoration: underline;
+    outline: none;
+}
+
+
+/* 4. COMPONENTES (TARJETAS Y TABLAS) */
+.tarjeta-servicio {
+    position: relative; 
+    background-color: var(--crema);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: var(--espacio-sm);
+}
+
+.tarjeta-servicio h3 {
+    font-family: var(--font-titulo);
+    color: var(--azul-noche);
+    margin-top: 0;
+    margin-bottom: var(--espacio-sm);
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--naranja-pedal);
+    color: var(--crema);
+    font-family: var(--font-titulo);
+    font-size: 0.85rem;
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--espacio-lg);
+    background-color: var(--crema);
+}
+
+th, td {
+    padding: var(--espacio-sm) var(--espacio-md);
+    text-align: left;
+    border: 1px solid var(--gris-asfalto);
+}
+
+th {
+    background-color: var(--azul-noche);
+    color: var(--crema);
+    font-family: var(--font-titulo);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+
+/* 5. FORMULARIOS Y BOTONES */
+form {
+    background-color: var(--crema);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 8px;
+    padding: var(--espacio-lg);
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.grupo-formulario {
+    margin-bottom: var(--espacio-md);
+}
+
+label {
+    display: block;
+    font-family: var(--font-titulo);
+    color: var(--azul-noche);
+    margin-bottom: var(--espacio-xs);
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: var(--espacio-sm);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--naranja-pedal);
+    border-color: transparent;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--naranja-pedal);
+    color: var(--crema);
+    padding: var(--espacio-sm) var(--espacio-md);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+    background-color: var(--verde-ruta);
+    color: var(--crema);
+    text-decoration: none;
+    outline: none;
+}
+
+
+/* 6. COMPONENTES FLOTANTES (WHATSAPP) */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border-radius: 50px;
+    font-family: var(--font-titulo);
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: scale(1.05);
+}
+
+.btn-whatsapp:focus {
+    outline: 3px solid var(--azul-noche);
+    outline-offset: 2px;
+}
+
+
+
+
+/* SEMANA #2. Flexbox, Grid y diseño responsive */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+}
+
+footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding: 2rem;
+   flex-wrap: wrap;
+   gap: 2rem; 
+}
+
