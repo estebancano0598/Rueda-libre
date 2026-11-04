@@ -186,4 +186,27 @@ en el footer sucede lo mismo que con el encabezado, se adapta al tamaño de las 
 
   ----------------------------------------------------------------------------
 
-  
+Layout en dos dimensiones (Flexbox y Grid)
+
+Criterio de elección:
+
+Yo uso Flexbox cuando necesito acomodar elementos en una sola dimensión
+(una fila o una columna) y dejar que el contenido reparta el espacio.
+Y uso Grid cuando necesito controlar dos dimensiones (filas y columnas)
+o cuando quiero que el contenedor defina las columnas con proporciones
+exactas, sin importar cuánto contenido tenga cada celda.
+
+Decisiones:
+
+Caso: Portada (inicio) | Herramienta: Grid | Justificación: Son dos columnas con proporción definida: el texto y la foto. En `.portada-hero` uso `grid-template-columns: 1fr 1fr` y `gap: 2rem`. El bloque de texto queda centrado verticalmente con `align-items: center`. Con Grid el contenedor decide el ancho de cada columna. 
+Caso: Galería "Nuestras rutas" | Herramienta: Grid | Justificación: Son tres tarjetas del mismo ancho, sin importar el largo del texto de cada una. Con `repeat(3, 1fr)` y `gap: 1.5rem` el contenedor reparte el espacio en partes iguales. En el MiniReto 4 solo tendré que cambiar el `repeat()` para pasar a 2 o 1 columna. 
+Caso: Reservas (formulario + contacto) | Herramienta: Grid | Justificación: Son dos bloques independientes con proporción 2:1. `grid-template-columns: 2fr 1fr` y `gap: 2.5rem` lo expresan directamente. Con Flexbox tendría que controlar los anchos con `flex-basis`, y la proporción dependería del contenido. 
+Caso: Fila del formulario (documento + celular) | Herramienta: Grid | Justificación: Son dos campos cortos y relacionados que deben medir lo mismo. Con `repeat(2, 1fr)` y `gap: 1rem` el contenedor fija las dos columnas iguales. Es una sola fila, así que Flexbox con `flex: 1` también habría servido. Elegí Grid porque en móvil podré pasarlo a una columna cambiando una sola línea. 
+Caso: Encabezado | Herramienta: Flexbox | Justificación: Es una sola fila: el título a un lado y el menú al otro. Solo necesito repartir y alinear en una dimensión, con `justify-content: space-between` y `align-items: center`. El menú también usa Flexbox con `gap` para separar los enlaces. 
+Caso: Pie de página | Herramienta: Flexbox | Justificación: Son dos bloques (marca y contacto) en una sola fila. `justify-content: space-between` los lleva a extremos opuestos y `align-items: center` los alinea verticalmente. No necesito controlar filas y columnas a la vez. 
+
+Verificación:
+
+- Las columnas se definen con `fr`, sin porcentajes ni anchos fijos en `px`.
+- En escritorio: portada en dos columnas, galería de tres rutas y reservas en proporción 2:1.
+- El menú, la flota y la validación del formulario siguen funcionando.

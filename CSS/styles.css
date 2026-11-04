@@ -12,6 +12,7 @@
     --espacio-sm: 0.5rem;
     --espacio-md: 1rem;
     --espacio-lg: 2rem;
+    --espacio-xs: 0.25rem;
 }
 
 *, *::before, *::after {
@@ -46,9 +47,11 @@ header h1 {
 }
 
 main {
-    max-width: 65rem;
-    margin: 0 auto;
-    padding: var(--espacio-lg);
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 main img {
@@ -75,7 +78,7 @@ main img {
 }
 
 #menu a {
-    color: var(--gris-asfalto);
+    color: var(--crema);
     text-decoration: none;
     font-family: var(--font-titulo);
 }
@@ -266,7 +269,7 @@ header {
 header nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5 rem;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0; 
@@ -276,7 +279,7 @@ header nav ul {
 
 .flota-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
   gap: 2rem;
   padding: 2rem 0;
 }
@@ -301,7 +304,7 @@ header nav ul {
 }
 
 
-/* ajustes a los botones de reserva para que se vean consistentes y atractivos */
+/* ajustes a los botones de reserva para que se vean consistentes*/
 .tarjeta-modelo .imagen-container img {
   width: 100%;
   height: 100%;
@@ -312,10 +315,10 @@ header nav ul {
 .tarjeta-modelo .btn-reservar {
   display: block;
   width: 100%;
-  background-color: #f6993f; /* Tono naranja característico del botón */
+  background-color: #f6993f; 
   color: #ffffff;
   padding: 0.75rem 1rem;
-  border-radius: 6px; /* Bordes redondeados suaves */
+  border-radius: 6px; 
   text-decoration: none;
   text-align: center;
   font-weight: bold;
@@ -357,4 +360,70 @@ header nav ul {
   height: 150px;
   object-fit: cover;
   border-radius: 4px;
+}
+
+/* Layout bidimensional 2:1 para Reservas */
+.reservas-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  gap: 2.5rem;                   
+  align-items: start;           
+}
+
+.columna-formulario,
+.columna-contacto {
+  min-width: 0;
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="email"],
+.grupo-formulario input[type="tel"],
+.grupo-formulario input[type="date"],
+.grupo-formulario input[type="number"],
+.grupo-formulario select,
+.grupo-formulario textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.fila-formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.fila-formulario .grupo-formulario {
+  min-width: 0; 
+}
+
+.columna-formulario form {
+  max-width: none;
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--azul-noche);
+  color: var(--crema);
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: var(--naranja-pedal);
+}
+
+.fila-formulario .grupo-formulario {
+  min-width: 0; 
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: 400;
 }
