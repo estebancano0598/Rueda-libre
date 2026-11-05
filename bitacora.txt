@@ -210,3 +210,26 @@ Verificación:
 - Las columnas se definen con `fr`, sin porcentajes ni anchos fijos en `px`.
 - En escritorio: portada en dos columnas, galería de tres rutas y reservas en proporción 2:1.
 - El menú, la flota y la validación del formulario siguen funcionando.
+
+
+-------------------------------------------------------------------------------------------------
+Flota con Bootstrap vs CSS escrito a mano:
+
+Tiempo invertido: 1:20 minutos.
+CSS de distribución de la flota: 30 lineas aproximadamente.
+Con Bootstrap: 0 lineas desde el documento CSS.
+Clases usadas para la distribucción: con CSS 0, con Bootstrap 7 container, row, g-4, col-sm-6, col-lg-4, col-xl-3.
+
+Qué me dio Bootstrap sin esfuerzo:
+- Los cuatro breakpoints (1, 2, 3 y 4 columnas) sin escribir ninguna media query.
+- Gutters consistentes con una sola clase (`g-4`).
+- Tarjetas de igual altura con `h-100`.
+- (Agrega lo que tú notaste.)
+
+Qué control perdí:
+- Mi grid con `auto-fit` y `minmax()` se adaptaba de forma fluida sin saltos; ahora las columnas cambian solo en los cuatro puntos fijos.
+- No pude fijar la caja de imagen uniforme de 180 px con `object-fit: contain` sin escribir CSS.
+- Mi paleta (`--azul-noche`, `--naranja-pedal`) y mis fuentes no aplican; los botones son los de Bootstrap.
+- El HTML quedó más largo, con más `div` y clases.
+
+---------------------------------------------------------------------------------------------------
