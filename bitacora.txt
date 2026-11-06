@@ -233,3 +233,15 @@ Qué control perdí:
 - El HTML quedó más largo, con más `div` y clases.
 
 ---------------------------------------------------------------------------------------------------
+
+## MiniReto 6: Sin una línea de CSS (utilidades de Bootstrap)
+
+### Cinco clases que encontré en la documentación
+
+| Clase | Dónde la encontré | Qué hace | Dónde la usé |
+|---|---|---|---|
+Clase: flex-md-row | ¿Dónde la encontré?: Utilities → Flex → Direction ¿Qué hace?: Cambia la dirección del flex a fila desde el breakpoint `md` (768 px).  Dónde la usé: Franja "¿Listo para rodar?": columna en celular, fila desde `md`. 
+| `d-none` + `d-md-block` | Utilities → Display → Hiding elements | `d-none` oculta el elemento y `d-md-block` lo muestra como bloque desde `md`. | Imagen decorativa de la franja. |
+| `justify-content-md-between` | Utilities → Flex → Justify content | Reparte los elementos con el espacio sobrante entre ellos desde `md`. | Separar texto, imagen y enlace en la franja. |
+| `rounded-pill` | Utilities → Borders → Border-radius | Redondea por completo las esquinas, forma de píldora. | Enlace destacado de la franja. |
+| `fs-1` | Content → Typography → Font size (utilities) | Aplica el tamaño de fuente más grande de la escala (2.5 rem). | Dato destacado de cada beneficio. |
