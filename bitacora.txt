@@ -234,14 +234,64 @@ Qué control perdí:
 
 ---------------------------------------------------------------------------------------------------
 
-## MiniReto 6: Sin una línea de CSS (utilidades de Bootstrap)
+MiniReto 6: Sin una línea de CSS (utilidades de Bootstrap)
 
-### Cinco clases que encontré en la documentación
+Cinco clases que encontré en la documentación
 
-| Clase | Dónde la encontré | Qué hace | Dónde la usé |
-|---|---|---|---|
-Clase: flex-md-row | ¿Dónde la encontré?: Utilities → Flex → Direction ¿Qué hace?: Cambia la dirección del flex a fila desde el breakpoint `md` (768 px).  Dónde la usé: Franja "¿Listo para rodar?": columna en celular, fila desde `md`. 
-| `d-none` + `d-md-block` | Utilities → Display → Hiding elements | `d-none` oculta el elemento y `d-md-block` lo muestra como bloque desde `md`. | Imagen decorativa de la franja. |
-| `justify-content-md-between` | Utilities → Flex → Justify content | Reparte los elementos con el espacio sobrante entre ellos desde `md`. | Separar texto, imagen y enlace en la franja. |
-| `rounded-pill` | Utilities → Borders → Border-radius | Redondea por completo las esquinas, forma de píldora. | Enlace destacado de la franja. |
-| `fs-1` | Content → Typography → Font size (utilities) | Aplica el tamaño de fuente más grande de la escala (2.5 rem). | Dato destacado de cada beneficio. |
+Clase: flex-md-row | ¿Dónde la encontré?: Utilities → Flex → Direction ¿Qué hace?: Cambia la dirección del flex a fila desde el breakpoint `md` (768 px). | ¿Dónde la usé?: Franja "¿Listo para rodar?": columna en celular, fila desde `md`. 
+Clase: `d-none` + `d-md-block` |¿Dónde la encontré?: Utilities → Display → Hiding elements |¿Qué hace?: `d-none` oculta el elemento y `d-md-block` lo muestra como bloque desde `md`. | ¿Dónde la usé?: Imagen decorativa de la franja. | justify-content-md-between | Utilities → Flex → Justify content | Reparte los elementos con el espacio sobrante entre ellos desde `md`. | Separar texto, imagen y enlace en la franja. 
+Clase: rounded-pill | ¿Dónde la encontré?: Utilities → Borders → Border-radius | ¿Qué hace?: Redondea por completo las esquinas, forma de píldora. | ¿Dónde la usé?: Enlace destacado de la franja. 
+Clase: fs-1 | ¿Dónde la encontré?: Content → Typography → Font size (utilities) | ¿Qué hace?: Aplica el tamaño de fuente más grande de la escala (2.5 rem). | ¿Dónde la usé?: Dato destacado de cada beneficio. 
+
+-----------------------------------------------------------------------------------------------------
+
+MiniReto 7: Conflictos entre styles.css y Bootstrap (inicio)
+
+Orden de carga: bootstrap.min.cs` se carga primero y styles.css después. Si dos reglas tienen la misma especificidad, gana la que se carga después, es decir, la mía. Ningún conflicto se resolvió con !important.
+
+Conflicto 1: fuente del body
+
+- Qué pasaba: el reboot de Bootstrap (`_reboot.scss:50`) aplica al `body` su propia font-family, font-size y font-weight. Mi hoja define font-family: var(--font-texto) (Open Sans).
+- Cómo lo detecté: en DevTools → Styles, inspeccionando <body>: las declaraciones de _reboot.scss:5` aparecen tachadas y la de `styles.css:22` está activa.
+- Solución: no necesité escribir código nuevo. Como styles.css se carga después de Bootstrap y el selector body tiene la misma especificidad, mi fuente gana por orden de cascada. El conflicto se resolvió con el orden de carga.
+
+Conflicto 2: main img afectaba las imágenes de las tarjetas
+
+- Qué pasaba: mi regla main img (styles.css:59) aplica margin: 1rem 0, box-shadow y border-radius a todas las imágenes de main, incluidas las de las .card de Bootstrap. Dentro de .ratio el margen desplazaba la imagen y la sombra marcaba un borde interno. 
+- Cómo lo detecté: inspeccioné la imagen de una tarjeta y en Styles vi mi regla main img actuando junto a .card-img-top de _card.scss:165.
+- Solución: agregué una regla de mayor especificidad, sin !important:
+
+     css
+  .card img {
+    margin: 0;
+    box-shadow: none;
+  }
+  
+
+  .card img tiene especificidad (0,1,1) y `main img` tiene (0,0,2), así que gana la primera. 
+
+Conflicto 3: colores de marca vs. colores de Bootstrap
+
+- Qué pasaba: el botón "Reservar" (btn btn-warning) salía con el amarillo de Bootstrap `rgb(255, 193, 7)` y no con mi naranja de marca --naranja-pedal (#f39a2b). Lo mismo pasaba con text-warning, bg-dark y text-secondary.
+- Cómo lo detecté: inspeccioné el botón y en Computed vi background-color: rgb(255, 193, 7).
+- Solución: las utilidades de Bootstrap llevan !important, pero leen variables CSS. Redefiní esas variables en mi hoja en lugar de pelear con el !important:
+
+    css
+  :root {
+    --bs-dark-rgb: 20, 33, 61;
+    --bs-warning-rgb: 243, 154, 43;
+    --bs-secondary-rgb: 91, 100, 112;
+  }
+
+  .btn-warning {
+    --bs-btn-bg: var(--naranja-pedal);
+    --bs-btn-border-color: var(--naranja-pedal);
+    --bs-btn-color: var(--azul-noche);
+    --bs-btn-hover-bg: #e08730;
+    --bs-btn-hover-border-color: #e08730;
+  }
+  
+
+  Después de agregarlo, Computed muestra `rgb(243, 154, 43)` y en Styles la variable de Bootstrap aparece tachada. 
+
+-----------------------------------------------------------------------------------
