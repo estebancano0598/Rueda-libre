@@ -13,15 +13,29 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
   <header>
-    <h1>Reserva tu bicicleta</h1>
-        <nav>
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="reservas.html" class="activo">Reservas</a></li>
-            </ul>
-        </nav>
-  </header>  
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">Reservas</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal"
+              aria-expanded="false"
+              aria-label="Abrir o cerrar el menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
+          <li class="nav-item"><a class="nav-link active" href="reservas.html">Reservas</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 <main class="container py-4 flex-grow-1">
   <h2 class="mb-4">Formulario de reserva</h2>
 
@@ -127,14 +141,11 @@
           </div>
         </fieldset>
 
-        <div class="grupo-formulario">
-          <button type="submit">Enviar datos de reserva</button>
-        </div>
-
+       <button type="submit" class="btn btn-warning btn-lg">Enviar datos de reserva</button>
       </form>
     </div>
 
-    <!-- Contacto: 4/12 desde md -->
+   
     <aside class="col-12 col-md-4">
       <h3 class="h5">Información de contacto</h3>
       <p>¿Deseas reservar o resolver dudas? Escríbenos a:<br>
@@ -148,6 +159,7 @@
         <dt>Sábados, domingos y festivos</dt>
         <dd>6:00 a. m. a 2:00 p. m.</dd>
       </dl>
+      <a href="tarifas.html" class="btn btn-outline-dark btn-sm">Ver tarifas</a>
       </aside>
 
   </div>
