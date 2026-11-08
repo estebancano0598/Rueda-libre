@@ -295,3 +295,34 @@ Conflicto 3: colores de marca vs. colores de Bootstrap
   Después de agregarlo, Computed muestra `rgb(243, 154, 43)` y en Styles la variable de Bootstrap aparece tachada. 
 
 -----------------------------------------------------------------------------------
+
+MiniReto 8: Comparativa final, CSS propio vs. Bootstrap
+
+Datos:
+
+Líneas de styles.css:  CSS: lineas 360 | Bootstrap: lineas 257
+Tiempo invertido: CSS: 1 semana y 2 días aprox. | bootstrap: 6 días.
+
+Ventajas observadas:
+
+- Los breakpoints (1, 2, 3 y 4 columnas) salen de clases, sin escribir media queries.
+- Gutters y alturas iguales de tarjetas con g-4 y h-100.
+- table-responsive evitó el desborde de las tablas en móvil sin CSS.
+- La distribución se lee en el HTML (col-md-8, col-lg-4) en lugar de buscarla en el CSS.
+- El CSS quedó centrado en la identidad visual: variables, tipografía, colores, tablas y estados.
+
+Desventajas observadas:
+
+- El HTML es más largo y tiene más clases por elemento.
+- El reboot de Bootstrap chocó con mis estilos (fuente, imágenes, caption, fieldset) y tuve que resolverlos.
+- Los colores de marca exigen redefinir variables --bs-; no se aplican solos.
+- Perdí control fino, como la caja de imagen de 180 px y el auto-fit fluido.
+- Dependo de un CDN externo y de su versión (5.3.8).
+
+Conclusión: Bootstrap permite agilizar el proceso de otorgar estilos en la pagina, reduce la cantidad de lineas css a escribir,
+aunque tambien añade más clases al HTML, haciendo el archivo más pesado y tambien delimita con una mayor rigidez la 
+personalización de la pagina. Esto hace que si reduzca tiempo conciderablemente aunque esto haga que la pagina tal vez se note un poco más 
+generica, aunque esto se podría reducccir, utilizando paralelamente el codigo CSS.
+
+---------------------------------------------------------------------------------------------
+
