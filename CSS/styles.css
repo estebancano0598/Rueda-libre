@@ -173,7 +173,7 @@ textarea:focus {
     border-color: transparent;
 }
 
-
+/* 7. BOTÓN FLOTANTE DE WHATSAPP */
 .btn-whatsapp {
     position: fixed;
     bottom: 2rem;

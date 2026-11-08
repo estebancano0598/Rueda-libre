@@ -43,6 +43,67 @@
 </header>
     <main class="container py-4">
 
+      <section class="py-4">
+  <div id="carruselPromos" class="carousel slide" data-bs-ride="carousel" aria-label="Promociones del mes">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
+      <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="1" aria-label="Promoción 2"></button>
+      <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="2" aria-label="Promoción 3"></button>
+    </div>
+
+    <div class="carousel-inner rounded-3">
+
+      <div class="carousel-item active">
+        <div class="ratio ratio-21x9 bg-dark">
+          <img src="paginas/img/bicicleta/Bicicleta-Electrica-Urbana-PNG.png"
+               class="object-fit-contain"
+               alt="Bicicleta eléctrica urbana, en promoción de lunes a jueves">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="h3">20 % de descuento en eléctricas</h2>
+          <p>De lunes a jueves.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="ratio ratio-21x9 bg-dark">
+          <img src="paginas/img/bicicleta/tandemsinfondo.png"
+               class="object-fit-contain"
+               alt="Bicicleta tándem para dos personas, en promoción de cumpleaños">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="h3">¿Estás de cumpleaños?</h2>
+          <p>El recorrido guiado es gratis.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="ratio ratio-21x9 bg-dark">
+          <img src="paginas/img/bicicleta/urbanaclasicasinfondo.png"
+               class="object-fit-contain"
+               alt="Bicicleta urbana clásica, en promoción de martes 2x1">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="h3">Martes 2x1 en bicicletas urbanas</h2>
+          <p>Trae a alguien y rueden juntos.</p>
+        </div>
+      </div>
+
+    </div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carruselPromos" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Anterior</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carruselPromos" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Siguiente</span>
+</button>
+
+  </div>
+</section>
+
   <section class="row align-items-center g-4 py-4">
     <div class="col-12 col-md-6">
       <h2>¿Quiénes somos?</h2>
@@ -80,7 +141,9 @@
 
       <div class="col-12 col-md-4">
         <article class="card h-100 text-center">
+          <div class="ratio ratio-4x3">
           <img src="paginas/img/ruta/ruta-rio.png" class="card-img-top" alt="Ruta por el Río">
+        </div>
           <div class="card-body">
             <h3 class="h5 card-title">Ruta por el Río</h3>
             <p class="card-text"><strong>Nivel:</strong> Principiante.</p>
@@ -90,7 +153,9 @@
 
       <div class="col-12 col-md-4">
         <article class="card h-100 text-center">
-          <img src="paginas/img/ruta/ruta-cerro.png" class="card-img-top" alt="Ruta Mirador">
+          <div class="ratio ratio-4x3">
+          <img src="paginas/img/ruta/ruta-cerro.png" class="card-img-top" alt="Ruta el mirador">
+          </div>
           <div class="card-body">
             <h3 class="h5 card-title">Ruta el mirador</h3>
             <p class="card-text"><strong>Nivel:</strong> Intermedio.</p>
@@ -100,7 +165,9 @@
 
       <div class="col-12 col-md-4">
         <article class="card h-100 text-center">
-          <img src="paginas/img/ruta/ruta-montana.png" class="card-img-top" alt="Ruta Montaña">
+          <div class="ratio ratio-4x3">
+          <img src="paginas/img/ruta/ruta-montana.png" class="card-img-top" alt="Ruta ascenso a la Montaña">
+          </div>
           <div class="card-body">
             <h3 class="h5 card-title">Ascenso a la montaña</h3>
             <p class="card-text"><strong>Nivel:</strong> Avanzado.</p>
@@ -113,7 +180,6 @@
     </div>
   </section>
 
-  <!-- FLOTA: 1 / 2 / 3 / 4 columnas -->
   <section class="py-4">
     <h2 class="mb-4">Nuestra flota</h2>
     <div class="row g-4">
@@ -219,7 +285,6 @@
     </div>
   </section>
 
-  <!-- ¿CÓMO ALQUILAR?: la imagen y los párrafos salen del <ol> -->
   <section class="py-4">
     <h2>¿Cómo alquilar?</h2>
     <ol>
@@ -234,7 +299,7 @@
     <p>Si quieres saber cómo llegar, <a href="#Encuentranos">Nuestra ubicación</a></p>
   </section>
 
-  <!-- BENEFICIOS (MiniReto 6): reemplaza la lista "Beneficios de alquilar con nosotros" -->
+  
   <section class="py-5">
     <h2 class="text-center fw-bold text-dark mb-5">¿Por qué Rueda Libre?</h2>
     <div class="row g-4">
@@ -274,7 +339,6 @@
     </div>
   </section>
 
-  <!-- FRANJA FINAL (MiniReto 6) -->
   <section class="bg-dark text-light rounded-3 p-4 p-md-5 my-5">
     <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3">
       <img src="paginas/img/bicicleta/ATLAS-G-01-removebg-preview.png"
@@ -285,7 +349,7 @@
     </div>
   </section>
 
-  <!-- UBICACIÓN: conserva el ancla #Encuentranos de los enlaces -->
+
   <section class="py-4">
     <h2 id="Encuentranos" class="h3">Encuéntranos</h2>
     <p>Nos puedes encontrar en la siguiente ubicación:</p>
