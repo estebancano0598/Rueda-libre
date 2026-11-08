@@ -1,4 +1,4 @@
-/* 1. VARIABLES Y CONFIGURACIÓN GLOBAL */
+/* 1. VARIABLES (identidad de marca) */
 :root {
     --azul-noche: #14213d;
     --gris-asfalto: #5b6470;
@@ -9,36 +9,38 @@
     --font-titulo: 'Montserrat', sans-serif;
     --font-texto: 'Open Sans', sans-serif;
 
+    --espacio-xs: 0.25rem;
     --espacio-sm: 0.5rem;
     --espacio-md: 1rem;
     --espacio-lg: 2rem;
-    --espacio-xs: 0.25rem;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
+/* 2. TIPOGRAFÍA Y COLORES BASE */
 body {
     font-family: var(--font-texto);
     color: var(--azul-noche);
     background-color: var(--crema);
-    margin: 0;
-    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-titulo);
 }
 
+main img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* 2. ESTRUCTURA BASE Y LAYOUT */
+/* 3. ENCABEZADO, MENÚ Y PIE TEMPORAL: el Flexbox del header, el menú y el footer se
+   reemplaza en el MiniReto 9 (navbar de Bootstrap). */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    min-height: 10vh;
     background-color: var(--azul-noche);
     color: var(--crema);
-    padding: var(--espacio-lg);
-    text-align: center;
-    min-height: 10vh;
 }
 
 header h1 {
@@ -46,37 +48,14 @@ header h1 {
     margin-bottom: var(--espacio-sm);
 }
 
-/* TARIFAS Y RESERVAS: main sigue sin .container en esas páginas */
-main {
-max-width: 75rem;
-margin-left: auto;
-margin-right: auto;
-padding-left: 2rem;
-padding-right: 2rem;
-}
-
-/* TARIFAS Y RESERVAS: imágenes dentro de main (logo en tarifas) */
-main img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: var(--espacio-md) 0;
-}
-
-
-/* 3. NAVEGACIÓN Y MENÚ */
 #menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: var(--espacio-md);
-}
-
-#menu li {
-    display: inline-block;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #menu a {
@@ -97,10 +76,24 @@ main img {
     outline: none;
 }
 
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--azul-noche);
+    color: var(--crema);
+    font-size: 0.875rem;
+}
 
-/* 4. COMPONENTES (TARJETAS Y TABLAS) */
+footer a {
+    color: var(--naranja-pedal);
+}
+
+/* 4. COMPONENTES: TARJETAS DE SERVICIOS */
 .tarjeta-servicio {
-    position: relative; 
+    position: relative;
     background-color: var(--crema);
     border: 1px solid var(--gris-asfalto);
     border-radius: 8px;
@@ -109,15 +102,7 @@ main img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.tarjeta-servicio img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: var(--espacio-sm);
-}
-
 .tarjeta-servicio h3 {
-    font-family: var(--font-titulo);
     color: var(--azul-noche);
     margin-top: 0;
     margin-bottom: var(--espacio-sm);
@@ -137,12 +122,17 @@ main img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* TARIFAS: tablas */ /* RESERVAS: formulario */
+/* 5. TABLAS (tarifas)*/
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: var(--espacio-lg);
     background-color: var(--crema);
+}
+
+caption {
+    caption-side: top;
+    color: var(--azul-noche);
 }
 
 th, td {
@@ -161,15 +151,27 @@ tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.02);
 }
 
-
-/* 5. FORMULARIOS Y BOTONES */ /* RESERVAS: formulario */
+/* 6. FORMULARIO (reservas) */
 form {
     background-color: var(--crema);
     border: 1px solid var(--gris-asfalto);
     border-radius: 8px;
     padding: var(--espacio-lg);
-    max-width: 36rem;
-    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    margin-bottom: var(--espacio-md);
+}
+
+legend {
+    float: none;
+    width: auto;
+    padding: 0 var(--espacio-sm);
+    font-family: var(--font-titulo);
+    font-size: 1.1rem;
 }
 
 .grupo-formulario {
@@ -184,10 +186,18 @@ label {
     font-weight: 600;
 }
 
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline-block;
+    margin-right: 1rem;
+    font-weight: 400;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
+input[type="number"],
 select,
 textarea {
     width: 100%;
@@ -206,7 +216,8 @@ textarea:focus {
     border-color: transparent;
 }
 
-/* TARIFAS: botón "¡Reserva ahora!" */
+/*7. BOTONES Y COMPONENTES FLOTANTES TEMPORAL: .btn-cta y el botón del formulario se unifican
+   con clases de Bootstrap en el MiniReto 9. */
 .btn-cta {
     display: inline-block;
     background-color: var(--naranja-pedal);
@@ -227,8 +238,6 @@ textarea:focus {
     outline: none;
 }
 
-
-/* 6. COMPONENTES FLOTANTES (WHATSAPP) */
 .btn-whatsapp {
     position: fixed;
     bottom: 2rem;
@@ -250,6 +259,7 @@ textarea:focus {
 
 .btn-whatsapp:hover {
     background-color: #20ba5a;
+    color: #ffffff;
     transform: scale(1.05);
 }
 
@@ -258,128 +268,34 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-
-
-
-/* SEMANA #2. Flexbox, Grid y diseño responsive */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-}
-
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0; 
-}
-
-
-/* Layout bidimensional 2:1 para Reservas */ /* RESERVAS: layout 2:1 y fila del formulario */
-.reservas-layout {
-display: grid;
-grid-template-columns: 2fr 1fr; 
-gap: 2.5rem;                   
-align-items: start;           
-}
-
-.columna-formulario,
-.columna-contacto {
-min-width: 0;
-}
-
-.grupo-formulario input[type="text"],
-.grupo-formulario input[type="email"],
-.grupo-formulario input[type="tel"],
-.grupo-formulario input[type="date"],
-.grupo-formulario input[type="number"],
-.grupo-formulario select,
-.grupo-formulario textarea {
-width: 100%;
-box-sizing: border-box;
-}
-
-
-.fila-formulario {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1rem;
-}
-
-.fila-formulario .grupo-formulario {
-min-width: 0; 
-}
-
-.columna-formulario form {
-max-width: none;
-margin: 0;
-}
-
-footer {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 2rem;
-padding: 1rem 2rem;
-background-color: var(--azul-noche);
-color: var(--crema);
-font-size: 0.875rem;
-}
-
-footer a {
-color: var(--naranja-pedal);
-}
-
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-display: inline-block;
-margin-right: 1rem;
-font-weight: 400;
-}
-
-/*AJUSTES FRENTE A BOOTSTRAP (inicio)*/
-
-/* Colores de marca: las utilidades de Bootstrap usan !important,
-   pero leen variables --bs-*-rgb. Si las redefino, cambia el color sin !important. */
+/* 8. AJUSTES FRENTE A BOOTSTRAP (sin !important) */
 :root {
-  --bs-dark-rgb: 20, 33, 61;           
-  --bs-warning-rgb: 243, 154, 43;      
-  --bs-secondary-rgb: 91, 100, 112;    
-  --bs-success-rgb: 30, 122, 79;       
-  --bs-light-rgb: 250, 246, 239;       
-  --bs-link-color-rgb: 30, 122, 79;
-  --bs-link-hover-color-rgb: 243, 154, 43;
+    --bs-dark-rgb: 20, 33, 61;
+    --bs-warning-rgb: 243, 154, 43;
+    --bs-secondary-rgb: 91, 100, 112;
+    --bs-success-rgb: 30, 122, 79;
+    --bs-light-rgb: 250, 246, 239;
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color-rgb: 243, 154, 43;
 }
 
-/* El componente botón tiene sus propias variables */
 .btn-warning {
-  --bs-btn-color: var(--azul-noche);
-  --bs-btn-bg: var(--naranja-pedal);
-  --bs-btn-border-color: var(--naranja-pedal);
-  --bs-btn-hover-color: var(--azul-noche);
-  --bs-btn-hover-bg: #e08730;
-  --bs-btn-hover-border-color: #e08730;
-  --bs-btn-active-color: var(--azul-noche);
-  --bs-btn-active-bg: #e08730;
-  --bs-btn-active-border-color: #e08730;
+    --bs-btn-color: var(--azul-noche);
+    --bs-btn-bg: var(--naranja-pedal);
+    --bs-btn-border-color: var(--naranja-pedal);
+    --bs-btn-hover-color: var(--azul-noche);
+    --bs-btn-hover-bg: #e08730;
+    --bs-btn-hover-border-color: #e08730;
+    --bs-btn-active-color: var(--azul-noche);
+    --bs-btn-active-bg: #e08730;
+    --bs-btn-active-border-color: #e08730;
 }
 
-/* Imágenes de tarjetas: main img (0,0,2) pierde frente a .card img (0,1,1) */
 .card img {
-  margin: 0;
-  box-shadow: none;
-}
-
-/* a:hover de Bootstrap pisa el color de WhatsApp y del pie */
-.btn-whatsapp:hover {
-  color: #ffffff;
+    margin: 0;
+    box-shadow: none;
 }
 
 footer a:hover {
-  color: var(--crema);
+    color: var(--crema);
 }
