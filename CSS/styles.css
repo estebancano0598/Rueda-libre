@@ -1,5 +1,6 @@
-/* 1. VARIABLES (identidad de marca) */
+/* 1. VARIABLES (identidad de marca + variables de Bootstrap) */
 :root {
+    /* Paleta de marca */
     --azul-noche: #14213d;
     --gris-asfalto: #5b6470;
     --verde-ruta: #1e7a4f;
@@ -13,6 +14,29 @@
     --espacio-sm: 0.5rem;
     --espacio-md: 1rem;
     --espacio-lg: 2rem;
+
+    /* Bootstrap: color primario = Verde Ruta */
+    --bs-primary: #1e7a4f;
+    --bs-primary-rgb: 30, 122, 79;
+
+    /* Bootstrap: fuente del cuerpo */
+    --bs-body-font-family: var(--font-texto);
+
+    /* Bootstrap: enlaces (hover en verde oscuro) */
+    --bs-link-color: #1e7a4f;
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: #155537;
+    --bs-link-hover-color-rgb: 21, 85, 55;
+
+    /* Bootstrap: radio de los bordes */
+    --bs-border-radius: 0.5rem;
+
+    /* Ajustes de la semana anterior (el MiniReto 7) */
+    --bs-dark-rgb: 20, 33, 61;
+    --bs-warning-rgb: 243, 154, 43;
+    --bs-secondary-rgb: 91, 100, 112;
+    --bs-success-rgb: 30, 122, 79;
+    --bs-light-rgb: 250, 246, 239;
 }
 
 /* 2. TIPOGRAFÍA Y COLORES BASE */
@@ -70,7 +94,7 @@ footer a {
     top: 1rem;
     right: 1rem;
     background-color: var(--naranja-pedal);
-    color: var(--crema);
+    color: var(--azul-noche);
     font-family: var(--font-titulo);
     font-size: 0.85rem;
     padding: var(--espacio-xs) var(--espacio-sm);
@@ -157,27 +181,6 @@ legend {
 }
 
 /* 7. AJUSTES FRENTE A BOOTSTRAP (sin !important) */
-:root {
-    --bs-dark-rgb: 20, 33, 61;
-    --bs-warning-rgb: 243, 154, 43;
-    --bs-secondary-rgb: 91, 100, 112;
-    --bs-success-rgb: 30, 122, 79;
-    --bs-light-rgb: 250, 246, 239;
-    --bs-link-color-rgb: 30, 122, 79;
-    --bs-link-hover-color-rgb: 243, 154, 43;
-}
-
-.btn-warning {
-    --bs-btn-color: var(--azul-noche);
-    --bs-btn-bg: var(--naranja-pedal);
-    --bs-btn-border-color: var(--naranja-pedal);
-    --bs-btn-hover-color: var(--azul-noche);
-    --bs-btn-hover-bg: #e08730;
-    --bs-btn-hover-border-color: #e08730;
-    --bs-btn-active-color: var(--azul-noche);
-    --bs-btn-active-bg: #e08730;
-    --bs-btn-active-border-color: #e08730;
-}
 
 .card img {
     margin: 0;
@@ -197,4 +200,80 @@ footer a:hover {
     --bs-btn-active-color: var(--crema);
     --bs-btn-active-bg: var(--azul-noche);
     --bs-btn-active-border-color: var(--azul-noche);
+}
+
+.btn-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: var(--verde-ruta);
+    --bs-btn-border-color: var(--verde-ruta);
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #155537;
+    --bs-btn-hover-border-color: #155537;
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #10432b;
+    --bs-btn-active-border-color: #10432b;
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: var(--verde-ruta);
+    --bs-btn-disabled-border-color: var(--verde-ruta);
+}
+
+.btn-naranja {
+    --bs-btn-color: var(--azul-noche);
+    --bs-btn-bg: var(--naranja-pedal);
+    --bs-btn-border-color: var(--naranja-pedal);
+    --bs-btn-hover-color: var(--azul-noche);
+    --bs-btn-hover-bg: #e08730;
+    --bs-btn-hover-border-color: #e08730;
+    --bs-btn-focus-shadow-rgb: 243, 154, 43;
+    --bs-btn-active-color: var(--azul-noche);
+    --bs-btn-active-bg: #cc7a29;
+    --bs-btn-active-border-color: #cc7a29;
+    --bs-btn-disabled-color: var(--azul-noche);
+    --bs-btn-disabled-bg: var(--naranja-pedal);
+    --bs-btn-disabled-border-color: var(--naranja-pedal);
+}
+
+/* 8. CLASES PROPIAS (complementan a Bootstrap) */
+
+/* Portada: fondo de marca con degradado sutil */
+.rl-portada {
+    background: linear-gradient(135deg, var(--crema) 0%, #ffffff 100%);
+    border-radius: var(--bs-border-radius);
+    padding: var(--espacio-lg);
+}
+
+/* Títulos de sección: subrayado corto en naranja de marca */
+.rl-titulo-seccion {
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    color: var(--azul-noche);
+    position: relative;
+    padding-bottom: var(--espacio-sm);
+}
+
+.rl-titulo-seccion::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 0.25rem;
+    margin-top: var(--espacio-sm);
+    background-color: var(--naranja-pedal);
+    border-radius: 2px;
+}
+
+/* Centrado: el subrayado también se centra */
+.rl-titulo-seccion.text-center::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Pie de página: borde superior de marca y enlaces más legibles */
+.rl-pie {
+    border-top: 0.25rem solid var(--naranja-pedal);
+}
+
+.rl-pie a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
