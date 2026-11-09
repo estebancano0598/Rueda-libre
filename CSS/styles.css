@@ -248,22 +248,22 @@ footer a:hover {
     font-family: var(--font-titulo);
     font-weight: 700;
     color: var(--azul-noche);
-    position: relative;
-    padding-bottom: var(--espacio-sm);
+    width: fit-content;
+    max-width: 100%;
 }
 
 .rl-titulo-seccion::after {
     content: "";
     display: block;
-    width: 3.5rem;
-    height: 0.25rem;
-    margin-top: var(--espacio-sm);
+    width: 100%;
+    height: 0.3rem;
+    margin-top: 0.5rem;
     background-color: var(--naranja-pedal);
     border-radius: 2px;
 }
 
-/* Centrado: el subrayado también se centra */
-.rl-titulo-seccion.text-center::after {
+/* Si el título está centrado, el bloque completo se centra */
+.rl-titulo-seccion.text-center {
     margin-left: auto;
     margin-right: auto;
 }
